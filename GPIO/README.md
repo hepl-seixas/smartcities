@@ -1,7 +1,10 @@
 Cette section se concentre sur l'utilisation des LED, des boutons poussoir et des interruptions.
 
-## 1) LED
- a) description des fonctions :
+# 1) LED
+
+ Cette partie explique comment géré une LED via micropython.
+ 
+## a) description des fonctions :
  
    - Pin(num,Pin.OUT/IN) = fonction permettant de mettre une pin en imput ou en output
    - p2 = Pin(num, Pin.IN, Pin.PULL_UP) = fonction permettant d'attacher une résistance de pull-up à une pin
@@ -11,7 +14,7 @@ Cette section se concentre sur l'utilisation des LED, des boutons poussoir et de
    - utime.sleep (secondes) = fonction permettant d'attendre un certain temps
    - utime.sleep_ms(milisecondes)
    
-   b) Exemple de code :
+## b) Exemple de code :
     
   ```
   from machine import Pin
@@ -27,3 +30,10 @@ Cette section se concentre sur l'utilisation des LED, des boutons poussoir et de
       led.toggle() #alternance des état de la LED
       utime.sleep_ms(500) #attente de 500ms
  ```
+# 2) bouton-poussoir
+  Cette partie explique comment géré une bouton-poussoir via micropython.
+  
+## a) description des fonctions :
+
+## b) Exemple de code :
+
