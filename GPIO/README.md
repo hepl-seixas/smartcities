@@ -1,6 +1,6 @@
 Cette section se concentre sur l'utilisation des LED, des boutons poussoir et des interruptions.
 
-1) LED
+## 1) LED
  a) description des fonctions :
  
    - Pin(num,Pin.OUT/IN) = fonction permettant de mettre une pin en imput ou en output
@@ -11,8 +11,9 @@ Cette section se concentre sur l'utilisation des LED, des boutons poussoir et de
    - utime.sleep (secondes) = fonction permettant d'attendre un certain temps
    - utime.sleep_ms(milisecondes)
    
-   Exemple de code :
+   b) Exemple de code :
     
+  ```
   from machine import Pin
   import utime
 
@@ -25,3 +26,4 @@ Cette section se concentre sur l'utilisation des LED, des boutons poussoir et de
   while True :
       led.toggle() #alternance des état de la LED
       utime.sleep_ms(500) #attente de 500ms
+ ```
