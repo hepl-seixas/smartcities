@@ -1,7 +1,7 @@
 # smartcities
 Ce github introduit les différentes notions nécessaire afin de travailler avec le Grove starter kit pico. Afin de se faire, il faut se familiariser avec : le micropython, l'IDE Thonny et le Raspberry Pi Pico.
 
-1) micropython
+# 1) micropython
 
   Le python est un langage de programmation très utilisé pour les appareils puissants ayant suffisament de mémoire. C'est pour cela que le micropython est né.
   
@@ -9,7 +9,7 @@ Ce github introduit les différentes notions nécessaire afin de travailler avec
   
   Afin de pouvoir l'utilisé sur le Raspberry Pi Pico, il faut installer micropython sur le Raspberry Pi Pico. Pour se faire, il suffit de maintenir le button du RPI enfoncé avant et après avoir connecté le RPI sur le PC. Ceci ouvrire un dossier contenant la mémoire du RPI, il suffit juse de déposer micropython dans ce dossier.
   
-2) Thonny
+# 2) Thonny
   Thonny est un IDE simple d'utilisation permettant le codage du python et du micropython. Afin de l'utiliser, il faut :
     a) le télécharger via ce lien : https://thonny.org/
     b) changer l'interpreteur par : MicroPython (Raspberry Pi Pico).
@@ -25,7 +25,7 @@ Ce github introduit les différentes notions nécessaire afin de travailler avec
     
     4) Un interpréteur permettant de choisir notamment si le programme est codé en python ou en micro python
  
-3) Raspberry Pi Pico
+# 3) Raspberry Pi Pico
   C'est un microcontrolleur designé par Raspberry Pi. Il possède 26 pins GPIO multifonction incluant : 2 SPI, 2 I2C, 2 UART, 12 ADC de 12 bits et 16 canaux PWM
   ![image](https://user-images.githubusercontent.com/124899641/221366412-c38ba80d-ed7f-4ccb-8af2-fbd214e8f118.png)
   
