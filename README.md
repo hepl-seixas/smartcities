@@ -6,6 +6,8 @@ Ce github introduit les différentes notions nécessaire afin de travailler avec
 3) Thonny
 4) Raspberry Pi Pico
   C'est un microcontrolleur designé par Raspberry Pi. Il possède 26 pins GPIO multifonction incluant : 2 SPI, 2 I2C, 2 UART, 12 ADC de 12 bits et 16 canaux PWM
+  ![image](https://user-images.githubusercontent.com/124899641/221366412-c38ba80d-ed7f-4ccb-8af2-fbd214e8f118.png)
+
 
 
 
