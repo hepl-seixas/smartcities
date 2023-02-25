@@ -9,7 +9,7 @@ Ce github introduit les différentes notions nécessaire afin de travailler avec
   
   Afin de pouvoir l'utilisé sur le Raspberry Pi Pico, il faut installer micropython sur le Raspberry Pi Pico. Pour se faire, il suffit de maintenir le button du RPI enfoncé avant et après avoir connecté le RPI sur le PC. Ceci ouvrire un dossier contenant la mémoire du RPI, il suffit juse de déposer micropython dans ce dossier.
   
-3) Thonny
+2) Thonny
   Thonny est un IDE simple d'utilisation permettant le codage du python et du micropython. Afin de l'utiliser, il faut :
     a) le télécharger via ce lien : https://thonny.org/
     b) changer l'interpreteur par : MicroPython (Raspberry Pi Pico).
