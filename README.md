@@ -12,9 +12,13 @@ Ce github introduit les différentes notions nécessaire afin de travailler avec
     ![image](https://user-images.githubusercontent.com/124899641/221367883-a4a8a8b0-ef89-4435-8673-d2fd268365fc.png)
 
   L'interface de thonny contient :
+  
     1) une barre d'outils permettant notammenet de démarrer/arrêter un script
+    
     2) une zone de texte permettant d'écrire le script
+    
     3) Un shell dans lequel le script sera exécuté
+    
     4) Un interpréteur permettant de choisir notamment si le programme est codé en python ou en micro python
  
 5) Raspberry Pi Pico
