@@ -4,6 +4,8 @@ Cette section se concentre sur l'utilisation des LED, des boutons poussoir et de
 
  Cette partie explique comment géré une LED via micropython.
  
+ Le module est simple à comprendre : lorsque que la pin digitale est à l'état haut, la LED s'allume et inversément
+ 
 ## a) description des fonctions :
  
    - Pin(num,Pin.OUT/IN) = fonction permettant de mettre une pin en imput ou en output
@@ -17,8 +19,8 @@ Cette section se concentre sur l'utilisation des LED, des boutons poussoir et de
 ## b) Exemple de code :
     
   ```
-  from machine import Pin
-  import utime
+  from machine import Pin # c'est une librairie permettant d'accéder à des éléments propres à l'hardware (CPU, timer, bus, ...)
+  import utime # c'est une librairie permettant de controller le temps dans notre projet
 
   led = Pin(20, Pin.OUT) #configuration la pin 20 en sortie
 
@@ -33,6 +35,8 @@ Cette section se concentre sur l'utilisation des LED, des boutons poussoir et de
 # 2) bouton-poussoir
   Cette partie explique comment géré une bouton-poussoir via micropython.
   
+   Le module est simple à comprendre : lorsque que le bouton est pressé, il retourne la valeur 1 et inversément
+   
 ## a) description des fonctions :
 
 ## b) Exemple de code :
