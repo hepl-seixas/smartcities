@@ -57,4 +57,5 @@ Cette section se concentre sur l'utilisation des LED, des boutons poussoir et de
           utime.sleep(1)
       led.value(val)
       ```
+ Ce programme permet d'allumer/éteindre la LED quand le bouton est pressé. 
 
