@@ -1,8 +1,8 @@
 
-#1) Lecture du potentiomètre
+# 1) Lecture du potentiomètre
 
-#2) PWM (LED)
+# 2) PWM (LED)
 
-#3) PWM (Musique)
+# 3) PWM (Musique)
 
-##4) PWM (Servo)
+# 4) PWM (Servo)
