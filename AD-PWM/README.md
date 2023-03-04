@@ -8,7 +8,8 @@ Pour mesurer un signal continu à l'aide d'un microcontrolleur, il faut converti
 Un potentiomètre est un composant électronique composé de 3 pates et d'une partie rotative permettant de faire varier la résistance entre 2 des 3 pates et donc le voltage entre ces 2 pates. 
 
 ##1.1) Descriptions des fonctions
-sleep () : 
+- time.sleep (secondes) = fonction permettant d'attendre un certain nombre de seconde. Il s'agite d'une fonction similaire à utime.sleep(). 
+- adc.read_u16() = méthode permetant de lire la valeur de la pin connecté à ADC et de la retourné sous un format de 16 bits.
 
 ##1.2) Exemple de programme
 ```
