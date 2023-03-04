@@ -2,6 +2,7 @@
 Pour mesurer un signal continu à l'aide d'un microcontrolleur, il faut convertir ce signal en un signal numérique afin d'être codé sur un microcontrolleur. Cela se fait à l'aide d'un ADC (analog to digital converter). Le RPI pico posé sur son shield possède 3 ADC (A0, A1 et A2).
 
 Pour envoyer un signal continu à l'aide d'un microcontroller, il y a 2 solutions :
+
     - utilisation d'un DAC (digital to analog converter) malheureusement le RPI pico n'en possède pas
     - utilisation de PWM (pulse wide modulation). 
     ![image](https://user-images.githubusercontent.com/124899641/222868211-d61d8278-fc70-4cc0-9c4e-6db3e5acb518.png)
