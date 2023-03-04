@@ -44,7 +44,9 @@ while True:
    - PWM(Pin(x)) = fonction peremttant l'utilisation de la pin x en PWM
    - PWM(Pin(x)).freq(frequence) = fonction permettant de choisir la fréquence de la PWM. Attention si elle est trop base, un homme verra la LED clignoter
    - PWM(Pin(x)).duty_u16(y) = fonction permettant d'envoyer la valeur de y via PWM à la pin x. Cette donnée sera codé sur 16 bits donc la valeur max est de 65535 (= duty_cycle de 100%)
+   
    ##2.2) Exemple de programme
+   
    ![image](https://user-images.githubusercontent.com/124899641/222870518-0631ca80-cc50-4880-8ec2-3194dd95edce.png)
 
    ```
