@@ -70,5 +70,9 @@ while True:
   ```
   Ce programme va augmenter la luminosité de la LED jusqu'à ce qu'elle atteigne son maximum puis il va baisser la luminosité de la LED jusqu'à ce qu'elle atteigne son minimum. Attention la fréquencede la PWM est importante. Si elle est trop base, l'oeil humain verra la LED clignoté donc il faut que la fréquence soit suffisament élevé
 # 3) PWM (Musique)
+Un buzzer est un composant électronique permettant de faire de la mesure en alimentant un matériau piezoélectrique.
+Il existe 2 type de buzzer :
+   - Les buzzers actif sont des buzzers pouvant être alimenté en courant continu et ils générent un son. 
+   - Les buzzer passif sont des buzzers alimenté par une PWM ce qui permet de leur faire jouer un son spécifique et donc une musique tout cela en pouvant réglé le volume du son.
 
 # 4) PWM (Servo)
