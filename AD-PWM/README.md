@@ -4,9 +4,8 @@ Pour mesurer un signal continu à l'aide d'un microcontrolleur, il faut converti
 Pour envoyer un signal continu à l'aide d'un microcontroller, il y a 2 solutions :
 
    - utilisation d'un DAC (digital to analog converter) malheureusement le RPI pico n'en possède pas
-   - utilisation de PWM (pulse wide modulation). 
-    ![image](https://user-images.githubusercontent.com/124899641/222868211-d61d8278-fc70-4cc0-9c4e-6db3e5acb518.png)
-    La PWM est une technologie qui permet au microcontroller d'envoyer des états logique pendant un temps déterminé. La proportion de temps accordé à chaque état       logique correspond au duty cycle (= temps à l'état haut / temps à l'état bas) et celui-ci permet donc de calculer une tension moyenne ce qui permet donc de controller plusieurs composants électroniques tel que des LEDs, des Buzzer et des servomoteurs
+   - utilisation de PWM (pulse wide modulation). La PWM est une technologie qui permet au microcontroller d'envoyer des états logique pendant un temps déterminé. La proportion de temps accordé à chaque état logique correspond au duty cycle (= temps à l'état haut / temps à l'état bas) et celui-ci permet donc de calculer une tension moyenne ce qui permet donc de controller plusieurs composants électroniques tel que des LEDs, des Buzzer et des servomoteurs.
+![image](https://user-images.githubusercontent.com/124899641/222868211-d61d8278-fc70-4cc0-9c4e-6db3e5acb518.png)
 # 1) Lecture du potentiomètre
 ![image](https://user-images.githubusercontent.com/124899641/222856410-1c7761af-a26f-4241-abb2-067206f23fc0.png)
 Un potentiomètre est un composant électronique composé de 3 pates et d'une partie rotative permettant de faire varier la résistance entre 2 des 3 pates et donc le voltage entre ces 2 pates. 
