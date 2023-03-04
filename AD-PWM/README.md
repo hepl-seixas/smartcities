@@ -68,7 +68,7 @@ while True:
            utime.sleep_ms(1)
            LED_PWM.duty_u16(val) #Envoit la valeur de val en PWM à la LED
   ```
-  Ce programme va augmenter la luminosité de la LED jusqu'à ce qu'elle atteigne son maximum puis il va baisser la luminosité de la LED jusqu'à ce qu'elle atteigne son minimum
+  Ce programme va augmenter la luminosité de la LED jusqu'à ce qu'elle atteigne son maximum puis il va baisser la luminosité de la LED jusqu'à ce qu'elle atteigne son minimum. Attention la fréquencede la PWM est importante. Si elle est trop base, l'oeil humain verra la LED clignoté donc il faut que la fréquence soit suffisament élevé
 # 3) PWM (Musique)
 
 # 4) PWM (Servo)
