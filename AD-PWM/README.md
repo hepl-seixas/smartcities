@@ -1,8 +1,11 @@
 # 0) Introduction
 Pour mesurer un signal continu à l'aide d'un microcontrolleur, il faut convertir ce signal en un signal numérique afin d'être codé sur un microcontrolleur. Cela se fait à l'aide d'un ADC (analog to digital converter). Le RPI pico posé sur son shield possède 3 ADC (A0, A1 et A2).
 
-
-
+Pour envoyer un signal continu à l'aide d'un microcontroller, il y a 2 solutions :
+    - utilisation d'un DAC (digital to analog converter) malheureusement le RPI pico n'en possède pas
+    - utilisation de PWM (pulse wide modulation). 
+    ![image](https://user-images.githubusercontent.com/124899641/222868211-d61d8278-fc70-4cc0-9c4e-6db3e5acb518.png)
+    La PWM est une technologie qui permet au microcontroller d'envoyer des états logique pendant un temps déterminé. La proportion de temps accordé à chaque état       logique correspond au duty cycle (= temps à l'état haut / temps à l'état bas) et celui-ci permet donc de calculer une tension moyenne ce qui permet donc de controller plusieurs composants électroniques tel que des LEDs, des Buzzer et des servomoteurs
 # 1) Lecture du potentiomètre
 ![image](https://user-images.githubusercontent.com/124899641/222856410-1c7761af-a26f-4241-abb2-067206f23fc0.png)
 Un potentiomètre est un composant électronique composé de 3 pates et d'une partie rotative permettant de faire varier la résistance entre 2 des 3 pates et donc le voltage entre ces 2 pates. 
@@ -12,11 +15,13 @@ Un potentiomètre est un composant électronique composé de 3 pates et d'une pa
 - adc.read_u16() = méthode permetant de lire la valeur de la pin connecté à ADC et de la retourné sous un format de 16 bits.
 
 ##1.2) Exemple de programme
+![image](https://user-images.githubusercontent.com/124899641/222863779-4a0d5503-7486-4066-93d0-d8b3c17b95fe.png)
+
 ```
 from machine import Pin, ADC
 from time import sleep #fonction permettant de faire la même chose que utime.sleep()
 
-led = Pin(20, Pin.OUT) #configuration la pin 20 en sortie
+led = Pin(16, Pin.OUT) #configuration la pin 20 en sortie
 potentiometre = ADC(1) #connexion de la variable potentiometre à la pin A1
 
 while True:
