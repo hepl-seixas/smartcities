@@ -152,3 +152,30 @@ Il existe 2 type de buzzer :
    Ce programme va jouer la musique "Happy birthday" en créant une fonction pour chaque note dont les paramètres seront : la fréquence de la note (dépendant de la fréquence de la PWM), le volume de la note (dépendant du duty_cycle de la PWM), du temps pendant lequel la note est joué (paramétré vita un utime.sleep()).
 
 # 4) PWM (Servo)
+Un servomoteur est un moteur s'orientant d'un certain angle (soit entre 0 et 180°, soit entre 0 et 360°) en fonction d'une PWM. Celui du Grove starter kit ne tourne que de 0 à 180°.
+Dépendant du servo, il faut des PWM différentes. Voici les valeurs concernant le servo utilisé dans le grove starter kit :
+![image](https://user-images.githubusercontent.com/124899641/222873625-ee23a156-9aad-4a65-ae4e-71d93dfee048.png)
+
+   ##4.1) Descriptions des fonctions
+   Il n'y a pas de nouvelles fonctions
+   ##4.2) Exemple de programme
+   ![image](https://user-images.githubusercontent.com/124899641/222873643-d9b4f6eb-71e6-4cc4-bff9-2d0c67b77f1f.png)
+   ```
+from machine import Pin, PWM
+import utime
+
+Servo_PWM = PWM (Pin(20))
+Servo_PWM.freq(100)
+val = 4000
+while True :
+    while val < 17000: #tant que val ne dépasse la valeur maximale possible donner en PWM. Cet valeur correspond à un angle de 180°
+        val=val+1000 #incrémentation de val
+        utime.sleep(1)
+        Servo_PWM.duty_u16(val) #Envoit la valeur de val en PWM au Servo
+    while val>4000:      #tant que val ne dépasse la valeur minimale possible donner en PWM. Cet valeur correspond à un angle de 0°
+        val = val-1000 #décrémentation de val
+        utime.sleep(1)
+        Servo_PWM.duty_u16(val) #Envoit la valeur de val en PWM au Servo
+```
+Ce programme est quasiment un copier-collé du programme de la LED. C'est parce qu'au niveau de la programmation ces 2 composants fonctionnent de la même manière.
+Ce programme va faire tournée plusieurs fois le servo jusqu'à ce qu'il atteigne 180° puis il ira en sens inverse jusqu'à ce qu'il atteigne 0° et ainsi de suite
