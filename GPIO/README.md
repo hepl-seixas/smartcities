@@ -32,6 +32,11 @@ Cette section se concentre sur l'utilisation des LED, des boutons poussoir et de
       led.toggle() #alternance des état de la LED
       utime.sleep_ms(500) #attente de 500ms
  ```
+ 
+
+https://user-images.githubusercontent.com/124899641/224553579-893817a6-990a-4205-a3d0-e9341e6860fa.mp4
+
+
 # 2) bouton-poussoir
   Cette partie explique comment géré une bouton-poussoir via micropython.
   
@@ -41,7 +46,6 @@ Cette section se concentre sur l'utilisation des LED, des boutons poussoir et de
    Il n'y a pas de nouvelles fonctions
 
 
-https://user-images.githubusercontent.com/124899641/224553510-0b179088-f918-4ccc-864a-703ab2a11a31.mp4
 
 ## b) Exemple de code :
 ```
@@ -62,3 +66,4 @@ https://user-images.githubusercontent.com/124899641/224553510-0b179088-f918-4ccc
       ```
  Ce programme permet d'allumer/éteindre la LED quand le bouton est pressé. 
 
+https://user-images.githubusercontent.com/124899641/224553510-0b179088-f918-4ccc-864a-703ab2a11a31.mp4
