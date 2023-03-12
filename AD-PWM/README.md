@@ -38,6 +38,11 @@ while True:
 ```
    Ce programme va allumer la LED si le potentiometre est entre 20000 et 40000
 
+
+https://user-images.githubusercontent.com/124899641/224554092-9999a965-f759-40ca-b54b-cdb4b75d5bc6.mp4
+
+
+
 # 2) PWM (LED)
 
    ##2.1) Descriptions des fonctions
@@ -69,6 +74,11 @@ while True:
            LED_PWM.duty_u16(val) #Envoit la valeur de val en PWM à la LED
   ```
   Ce programme va augmenter la luminosité de la LED jusqu'à ce qu'elle atteigne son maximum puis il va baisser la luminosité de la LED jusqu'à ce qu'elle atteigne son minimum. Attention la fréquencede la PWM est importante. Si elle est trop base, l'oeil humain verra la LED clignoté donc il faut que la fréquence soit suffisament élevé
+  
+
+https://user-images.githubusercontent.com/124899641/224554203-1fef2bd0-7c97-409f-a4c9-ae896a22a842.mp4
+
+
 # 3) PWM (Musique)
 Un buzzer est un composant électronique permettant de faire de la mesure en alimentant un matériau piezoélectrique.
 Il existe 2 type de buzzer :
@@ -150,6 +160,10 @@ Il existe 2 type de buzzer :
       N()
       ```
    Ce programme va jouer la musique "Happy birthday" en créant une fonction pour chaque note dont les paramètres seront : la fréquence de la note (dépendant de la fréquence de la PWM), le volume de la note (dépendant du duty_cycle de la PWM), du temps pendant lequel la note est joué (paramétré vita un utime.sleep()).
+
+
+https://user-images.githubusercontent.com/124899641/224554320-4234f505-0b58-44df-a633-f394864600dd.mp4
+
 
 # 4) PWM (Servo)
 Un servomoteur est un moteur s'orientant d'un certain angle (soit entre 0 et 180°, soit entre 0 et 360°) en fonction d'une PWM. Celui du Grove starter kit ne tourne que de 0 à 180°.
