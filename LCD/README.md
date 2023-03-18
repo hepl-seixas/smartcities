@@ -16,10 +16,15 @@ Afin de programmer l'écran LCD, il est conseillé d'utiliser une bibliothèque 
 La librairie LCD téléchargé précédement est une librairie orienté objet donc il s'agit d'une librairie avec une classe (LCD1602) et des méthodes qui lui sont associés. Cdtte partie va décrire les différentes méthodes existantes dans cette librairie.
 
 • display() — Active l'afficheur.
+
 • no_display() — désactive l'afficheur.
+
 • clear() — supprime ce qui est affihé et renvoit le curseur.
+
 • setCursor(col, row) — choisit l'endroit où le curseur doit se positionner. Row = la ligne et col = la colonne.
+
 • print(text) — Affiche les caractères. Cette méthode n'accepte que le format des chaines de caractères donc il ne faut pas oublier de changer le type d'une variable afin de pouvoir utiliser cette méthode.
+
 • machine.I2C(id,*,scl,sda,freq=400000) — Il s'agit d'une méthodepermettant de programmer l'interface I2C utilisé avec le LCD. id = numéro du périphérique I2C utilisé, scl = pin utilisé pour le SCl de l'I2C, SDA = pin utilisé pour le SDA de l'I2C, freq = la fréquence maximale utilisé par la pin SCL.
 
 # 2) Programmes
