@@ -43,4 +43,7 @@ Cette partie se consacra sur la programmation de 2 programmes permettant : d'aff
 
   d.print("Hello world") #affichage de Hello world
 ```
+![image](https://user-images.githubusercontent.com/124899641/226210672-5a391d5b-9881-48e0-bb3e-27abaf67e6d0.png)
+
   ## 2.2) Affichage de la position angulaire du potentiomètre
+  
