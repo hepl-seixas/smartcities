@@ -29,6 +29,8 @@ La librairie LCD téléchargé précédement est une librairie orienté objet do
 
 • d = LCD1602 (i2c,2,16) — création d'un objet de type LCD1602. Les paramètres correspondent au type de liaison utilisé, nombre de colone et nombre de ligne.
 
+• write() — permet d'écrire un caractère ou un caractère spécial.
+
 # 2) Programmes
 Cette partie se consacra sur la programmation de 2 programmes permettant : d'afficher un message/la position angulaire d'un potentiomètre sur un LCD
 
