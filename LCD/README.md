@@ -25,10 +25,22 @@ La librairie LCD téléchargé précédement est une librairie orienté objet do
 
 • print(text) — Affiche les caractères. Cette méthode n'accepte que le format des chaines de caractères donc il ne faut pas oublier de changer le type d'une variable afin de pouvoir utiliser cette méthode.
 
-• machine.I2C(id,*,scl,sda,freq=400000) — Il s'agit d'une méthodepermettant de programmer l'interface I2C utilisé avec le LCD. id = numéro du périphérique I2C utilisé, scl = pin utilisé pour le SCl de l'I2C, SDA = pin utilisé pour le SDA de l'I2C, freq = la fréquence maximale utilisé par la pin SCL.
+• machine.I2C(id,*,scl,sda,freq=400000) — Il s'agit d'une méthode permettant de programmer l'interface I2C utilisé avec le LCD. id = numéro du périphérique I2C utilisé, scl = pin utilisé pour le SCl de l'I2C, SDA = pin utilisé pour le SDA de l'I2C, freq = la fréquence maximale utilisé par la pin SCL.
+
+• d = LCD1602 (i2c,2,16) — création d'un objet de type LCD1602. Les paramètres correspondent au type de liaison utilisé, nombre de colone et nombre de ligne.
 
 # 2) Programmes
+Cette partie se consacra sur la programmation de 2 programmes permettant : d'afficher un message/la position angulaire d'un potentiomètre sur un LCD
 
   ## 2.1) Affichage de messages sur le LCD
-  
+  ```
+  from lcd1602 import LCD1602
+  from machine import I2C,Pin,ADC,PWM
+
+  i2c = I2C(1,scl = Pin(7), sda = Pin(6),freq = 400000) #programmation de l'interface I2C utilisé
+  d = LCD1602 (i2c,2,16) #création de l'objet LCD1602
+  d.display() #active le LCD
+
+  d.print("Hello world") #affichage de Hello world
+```
   ## 2.2) Affichage de la position angulaire du potentiomètre
