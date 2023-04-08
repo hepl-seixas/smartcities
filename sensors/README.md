@@ -1,4 +1,4 @@
-### 1) DHT 11
+# 1) DHT 11
 
 ## 0) Introduction
 
