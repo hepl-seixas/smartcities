@@ -1,11 +1,11 @@
-###1) DHT 11
+### 1) DHT 11
 
-##0) Introduction
+## 0) Introduction
 
-##1) description des méthodes 
+## 1) description des méthodes 
   - DHT (20) : création de l'objet DHT et affectation de l'objet à la pin 20
   - machine.RTC() : création de l'objet RTC permettant d'afficher la date et l'heure
-##2) programme 
+## 2) programme 
 ```
 from lcd1602 import LCD1602
 from machine import I2C,Pin,ADC,PWM,RTC
