@@ -44,4 +44,30 @@ Ce programme va alterner l'affichage de la température et de l'humidité avec l
 ## 1) description des méthodes 
   Il n'y a pas de nouvelles méthodes/fonctions
 ## 2) programme 
-  
+  ``
+from lcd1602 import LCD1602
+from machine import I2C,Pin,ADC
+from utime import sleep
+
+i2c = I2C(1,scl = Pin(7), sda = Pin(6),freq = 400000) #programmation de l'interface I2C utilisé
+d = LCD1602 (i2c,2,16) #création de l'objet LCD1602
+d.display() #active le LCD
+light_sensor = ADC(2)
+sound_sensor = ADC(0) #connexion des capteurs sur leurs ADC respectifs
+fan = Pin(16, Pin.OUT) #configuration la pin 16 en sortie
+
+while True : 
+    sound = sound_sensor.read_u16() # lecture des valeurs de température et d'humidité et stockage dans les variables temp et humid
+    d.setCursor (0,0)
+    d.print ("sound:"+str(sound)) # affichage de l'intensité sonore (en binaire) sur la 1ère ligne du LCD
+    d.setCursor (0,1)
+    light = light_sensor.read_u16() 
+    d.print ("light:"+str(light)) # affichage de l'intensité lumineuse (en binaire ) sur la 2 ème ligne du LCD
+    if light >= 40000: #allume ou éteins le ventilateur en fonction de la luminosité
+        fan.value(1)
+    else:
+        fan.value (0)
+    sleep (0.3)
+```
+Ce programme va afficher les valeurs de l'intensité lumineuse et sonore sur un LCD tout en controlant l'activation du ventilateur en fonction de l'intensité lumineuse 
+
