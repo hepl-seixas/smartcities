@@ -170,9 +170,9 @@ Un servomoteur est un moteur s'orientant d'un certain angle (soit entre 0 et 180
 Dépendant du servo, il faut des PWM différentes. Voici les valeurs concernant le servo utilisé dans le grove starter kit :
 ![image](https://user-images.githubusercontent.com/124899641/222873625-ee23a156-9aad-4a65-ae4e-71d93dfee048.png)
 
-   ##4.1) Descriptions des fonctions
+   ## 4.1) Descriptions des fonctions
    Il n'y a pas de nouvelles fonctions
-   ##4.2) Exemple de programme
+   ## 4.2) Exemple de programme
    ![image](https://user-images.githubusercontent.com/124899641/222873643-d9b4f6eb-71e6-4cc4-bff9-2d0c67b77f1f.png)
    ```
 from machine import Pin, PWM
