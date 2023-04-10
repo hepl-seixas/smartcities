@@ -72,3 +72,35 @@ while True :
 ```
 Ce programme va afficher les valeurs de l'intensité lumineuse et sonore sur un LCD tout en controlant l'activation du ventilateur en fonction de l'intensité lumineuse 
 
+# 3) capteur de mouvement PIR
+  ## 0) Introduction 
+  Le capteur de mouvement PIR est un capteur détectant les mouvements à l'aide de la lumière infrarouge. Lorsqu'une personne bouge dans son champ de vision, le capteur va détecter une perturbation dans la lumière infrarouge de la pièce ainsi il saura qu'il y a eu un mouvement.
+  ## 1) Description des méthodes
+    Il n'y a pas de nouvelles méthodes mais ce programme utilise la notion de class. Les class sont très utilisé dans la programmation python, il s'agit de la base de la programmation orienté objet. Un class est un ensemble utilisé lorsque plusieurs objets partagent des mêmes caractéristiques (variables ou fonctions). Afin de créer une class, il faut utiliser le mot clé Class et un constructeur de Class (_init_) ensuite, il suffit de créer toutes les variables/méthodes appartenant à la class.
+  
+  ## 2) Programme
+  ```
+  from machine import Pin, PWM
+from utime import sleep
+class SERVO: 					#création d'une class servo
+    def __init__(self, pin):	#appel du constructeur de class
+        self.pin = pin			# création de 2 variables d'instances
+        self.pwm = PWM(self.pin)
+        
+    def turn(self, val): #création d'une méthode de la class Servo permettant de touner le moteur d'un angle donné 
+        self.pwm.freq(100)
+        self.pwm.duty_u16(int(val/180*13000+4000))
+
+servo = SERVO(Pin(20)) # création d'un objet de la classe SERVO
+pir = Pin(18,Pin.IN) #connexion du PIR avec la pin 18
+
+while True :
+    if pir.value() == 1: # Si le capteur détecter un mouvement, il tourne de 100°
+        servo.turn(100)
+        print ("mouvement détecté")
+        sleep(1)
+    else :				# Sinon il tourne de 50°
+        servo.turn (50)
+        sleep(1)
+```
+Ce programme va faire tourner un servo moteur en fonction de la détection ou non du capteur PIR 
