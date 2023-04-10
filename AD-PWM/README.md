@@ -12,11 +12,11 @@ Pour envoyer un signal continu à l'aide d'un microcontroller, il y a 2 solution
 ![image](https://user-images.githubusercontent.com/124899641/222856410-1c7761af-a26f-4241-abb2-067206f23fc0.png)
 Un potentiomètre est un composant électronique composé de 3 pates et d'une partie rotative permettant de faire varier la résistance entre 2 des 3 pates et donc le voltage entre ces 2 pates. 
 
-##1.1) Descriptions des fonctions
+## 1.1) Descriptions des fonctions
 - time.sleep (secondes) = fonction permettant d'attendre un certain nombre de seconde. Il s'agite d'une fonction similaire à utime.sleep(). 
 - adc.read_u16() = méthode permetant de lire la valeur de la pin connecté à ADC et de la retourné sous un format de 16 bits.
 
-##1.2) Exemple de programme
+## 1.2) Exemple de programme
 ![image](https://user-images.githubusercontent.com/124899641/222863779-4a0d5503-7486-4066-93d0-d8b3c17b95fe.png)
 
 ```
@@ -45,12 +45,12 @@ https://user-images.githubusercontent.com/124899641/224554092-9999a965-f759-40ca
 
 # 2) PWM (LED)
 
-   ##2.1) Descriptions des fonctions
+   ## 2.1) Descriptions des fonctions
    - PWM(Pin(x)) = fonction peremttant l'utilisation de la pin x en PWM
    - PWM(Pin(x)).freq(frequence) = fonction permettant de choisir la fréquence de la PWM. Attention si elle est trop base, un homme verra la LED clignoter
    - PWM(Pin(x)).duty_u16(y) = fonction permettant d'envoyer la valeur de y via PWM à la pin x. Cette donnée sera codé sur 16 bits donc la valeur max est de 65535 (= duty_cycle de 100%)
    
-   ##2.2) Exemple de programme
+   ## 2.2) Exemple de programme
    
    ![image](https://user-images.githubusercontent.com/124899641/222870518-0631ca80-cc50-4880-8ec2-3194dd95edce.png)
 
@@ -84,12 +84,12 @@ Un buzzer est un composant électronique permettant de faire de la mesure en ali
 Il existe 2 type de buzzer :
    - Les buzzers actif sont des buzzers pouvant être alimenté en courant continu et ils générent un son. 
    - Les buzzer passif sont des buzzers alimenté par une PWM ce qui permet de leur faire jouer un son spécifique et donc une musique tout cela en pouvant réglé le volume du son. LA fréquence de la PWM va changé la hauteur d'un son alors que le duty_cycle de la PWM va changer le volume d'un son.
-   ##3.1) Descriptions des fonctions
+   ## 3.1) Descriptions des fonctions
    
    def function name (parameter list):  = syntaxe permettant de créer une fonction
         function body
         
-   ##3.2) Exemple de programme
+   ## 3.2) Exemple de programme
       ![image](https://user-images.githubusercontent.com/124899641/222872829-ff93f28e-7a1d-4107-a093-46e94ca14e47.png)
 
       ```
