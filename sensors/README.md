@@ -71,6 +71,12 @@ while True :
 ```
 Ce programme va afficher les valeurs de l'intensité lumineuse et sonore sur un LCD tout en controlant l'activation du ventilateur en fonction de l'intensité lumineuse 
 
+
+
+https://user-images.githubusercontent.com/124899641/235323050-8a1c4b25-0a60-4850-a1d1-812abce831e1.mp4
+
+
+
 # 3) capteur de mouvement PIR
   ## 0) Introduction 
   Le capteur de mouvement PIR est un capteur détectant les mouvements à l'aide de la lumière infrarouge. Lorsqu'une personne bouge dans son champ de vision, le capteur va détecter une perturbation dans la lumière infrarouge de la pièce ainsi il saura qu'il y a eu un mouvement.
