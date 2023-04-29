@@ -52,3 +52,9 @@ while True :
 
 ```
 C'est le même programme sauf qu'il gère la luminosité de la LED à l'aide du capteur de lumière en plus.
+
+
+https://user-images.githubusercontent.com/124899641/235322482-dfd76878-1386-46f7-9882-d9027fba5f1b.mp4
+
+
+
