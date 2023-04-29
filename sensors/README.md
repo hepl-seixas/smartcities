@@ -76,6 +76,8 @@ Ce programme va afficher les valeurs de l'intensité lumineuse et sonore sur un 
   ## 0) Introduction 
   Le capteur de mouvement PIR est un capteur détectant les mouvements à l'aide de la lumière infrarouge. Lorsqu'une personne bouge dans son champ de vision, le capteur va détecter une perturbation dans la lumière infrarouge de la pièce ainsi il saura qu'il y a eu un mouvement.
   ## 1) Description des méthodes
+  
+  
     Il n'y a pas de nouvelles méthodes mais ce programme utilise la notion de class. Les class sont très utilisé dans la programmation python, il s'agit de la base de la programmation orienté objet. Un class est un ensemble utilisé lorsque plusieurs objets partagent des mêmes caractéristiques (variables ou fonctions). Afin de créer une class, il faut utiliser le mot clé Class et un constructeur de Class (_init_) ensuite, il suffit de créer toutes les variables/méthodes appartenant à la class.
   
   ## 2) Programme
