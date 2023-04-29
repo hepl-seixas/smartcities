@@ -34,11 +34,10 @@ while True :
       d.print ("time:"+str(rtc.datetime()[4]) + "h" + str(rtc.datetime()[5])) # affichage du temps sur la 2ème ligne
       sleep (1)
 ```
-Ce programme va afficher la température et l'humidité ressenti par le dht11 sur le LCD
+Ce programme va alterner l'affichage de la température et de l'humidité avec l'affichage de la date et du temps sur le LCD toutes les 3 secondes 
 ![image](https://user-images.githubusercontent.com/124899641/230735789-e24ab416-95e6-4c2e-bf9f-429a124187c2.png)
 ![image](https://user-images.githubusercontent.com/124899641/230735798-6ba95eb0-4744-4687-a47e-051d88bf3bee.png)
 
-Ce programme va alterner l'affichage de la température et de l'humidité avec l'affichage de la date et du temps toutes les 3 secondes
 # 2) Capteur de lumière et de son
   ## 0) Introduction 
   Le capteur de son fonctionne à l'aide d'un microphone captant la vibration de l'air et convertissant cette vibration en un signal analogique. Tandis que le capteur de lumière utilise une photorésistance dont la résistance diminue en fonction de l'augmentation de l'intensité lumineuse. Cette partie va en plus introduire l'utilisation d'un ventilateur. Pour le controller, il faut utiliser un driver (le driver utilisé dans ce cours est un driver permettant seulement d'aller vers l'avant) qui sera connecté à un moteur qui sera lui-même connecté au ventilateur
