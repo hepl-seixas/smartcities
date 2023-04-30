@@ -35,9 +35,66 @@ Ce programme réalise seulement une connexion wifi mais il n'y a aucune véréfi
 # 2) Affichage de la date et de l'heure sur le LCD grâce à NTP
 Cette partie va s'intéresser à la façon de se connecter sur le service NTP afin d'obtenir la date et l'heure.
 ## 2.1 ) Description des méthodes
-
+- socket.getaddrinfo(host, port) : retourne des infos sur l'hôte (adresse IP, ...)
+- socket.socket(socket.AF_INET, socket.SOCK_DGRAM) : créer un socket se basant sur le protocole UDP/IP
+- socket.sendto(NTP_QUERY, addr) : envoie un message de NTP_QUERY bytes à l'adresse ADR permettant d'initialiser la communication
+- socket.recv(48) : reçois un message de 48 bytes
+- s.close() : ferme la connection du socket
+- struct.unpack("!I", msg[40:44]) : permet d'extraire certaines informations
 
 ## 2.2) Programme
+```
+import network, socket
+import struct
+from secrets import *
+import utime
+from lcd1602 import LCD1602
+from machine import I2C,Pin,ADC,PWM
+
+# connexion au wifi
+
+wlan = network.WLAN(network.STA_IF) # Créer un Objet WLAN
+wlan.active(True) #active l'objet WLAN
+wlan.connect(my_secrets["ssid"],my_secrets["WiFi_pass"]) # connection du WLAN au réseau wifi indiqué dans le dictionnaire contenu dans le fichier secrets
+
+def get_time(offset=7200, delta=2208988800, host="pool.ntp.org"):  # offset représente le décallage horaire en seconde (ici on est à UTC + 2 )
+                                                                   # delta représente le nombre de seconde écoulé depuis le 01/01/1900
+    NTP_QUERY = bytearray(48)
+    NTP_QUERY[0] = 0x1B # version 3 mode 3
+    addr = socket.getaddrinfo(host, 123)[0][-1] # permet d'obtenir l'adresse IP de l'hôte # 123 is the port number for NTP
+    
+    s = socket.socket(socket.AF_INET, socket.SOCK_DGRAM) # création d'un socket
+    try:
+        s.settimeout(1)
+        res = s.sendto(NTP_QUERY, addr) # envoie d'un ping contenant quelques informations au server afin d'initialiser la communication
+        
+        msg = s.recv(48) # reçois le message (de 48 byte)
+    finally:
+        s.close() # ferme la connection
+        
+    val = struct.unpack("!I", msg[40:44])[0] # extrait plusieurs données du server (les données 40 à 44 contiennent le temps)
+    t = val - delta # convertit le temps venant de NTP en le véritable temps  
+    tm = utime.gmtime(t+offset) # rajout du décalage horaire 
+    return tm  # retourne : année, mois, jour, heur, minute, seconde, ...
+
+t_now=get_time() # Utilisation de la fonction
+
+# ferme la connection au wifi
+wlan.disconnect()
+
+# configuration du LCD
+
+i2c = I2C(1,scl = Pin(7), sda = Pin(6),freq = 400000) #programmation de l'interface I2C utilisé
+d = LCD1602 (i2c,2,16) #création de l'objet LCD1602
+d.display() #active le LCD
+
+d.print("Time is: {:2d}:{:02d}:{:02d}".format(t_now[3],t_now[4],t_now[5])) #affiche l'heure (heure minue et seconde) espacé par des ":"") #affichage de Hello world
+d.setCursor(0,1) #mise du curseur à la position 0,1
+d.print ("Date is: {:2d}/{:02d}".format(t_now[2],t_now[1])) #affichage de la date (il n'y a pas suffisament de place sur le LCD pour afficher l'année)
+
+```
+![image](https://user-images.githubusercontent.com/124899641/235364779-9e868c65-d3db-46c4-895c-b38891763ce5.png)
+Ce code donne bien la date et l'heure. Malheureusement, il n'est pas possible d'afficher toute la date car le LCD ne permet d'afficher que 2x16 carctères.
 
 # 3) Affichage de la météo à l'ade de Open weather map
 Cette partie va présenter la manière de réaliser une connexion entre le RPI et open weather map
