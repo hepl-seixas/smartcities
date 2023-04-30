@@ -31,3 +31,41 @@ wlan.connect(my_secrets["ssid"],my_secrets["WiFi_pass"]) # connection du WLAN au
 wlan.disconnect()  #deconnexion du RPI
 ```
 Ce programme réalise seulement une connexion wifi mais il n'y a aucune véréfication de si la connexion s'est bien réalisé
+
+# 2) Affichage de la date et de l'heure sur le LCD grâce à NTP
+Cette partie va s'intéresser à la façon de se connecter sur le service NTP afin d'obtenir la date et l'heure.
+## 2.1 ) Description des méthodes
+
+
+## 2.2) Programme
+
+# 3) Affichage de la météo à l'ade de Open weather map
+Cette partie va présenter la manière de réaliser une connexion entre le RPI et open weather map
+## 3.1) Description des méthodes
+- requests.get(URL) : envoie une requête de type get (on demande des données) à une URL donnée
+- request.json() : formatage de la requête en format json
+## 3.2) Programme
+
+```
+import urequests as requests
+import network
+from secrets import *
+import utime
+# Réalisation d'une connexion wifi
+wlan = network.WLAN(network.STA_IF) # Créer un Objet WLAN
+wlan.active(True) #active l'objet WLAN
+wlan.connect(my_secrets["ssid"],my_secrets["WiFi_pass"]) # connection du WLAN au réseau wifi indiqué dans le dictionnaire contenu dans le fichier secrets
+# Now we can use the connection to access Internet.
+
+
+URL = "http://api.openweathermap.org/data/2.5/weather?lat=%s&lon=%s&appid=%s&units=metric" % (my_secrets["lat"], my_secrets["lon"],my_secrets["OWM_API_key"]) # enregistrement de l'URL avec les paramètres intéressant (latitude, longitude, ...)
+r = requests.get(URL) #requête get vers l'API
+print (r.json()) #affichage et mise en format json des données météos 
+
+# Close connection
+wlan.disconnect()  #deconnexion du RPI
+```
+![image](https://user-images.githubusercontent.com/124899641/235354207-8023a374-86c4-4c12-aec7-cad9c718c265.png)
+
+Il est évidemment possible de filtrer les données reçu, La requête get a donné un dictionnaire donc il est possible de le traiter comme il nous plait
+
